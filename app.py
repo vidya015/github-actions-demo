@@ -1,6 +1,5 @@
 from flask import Flask, jsonify
 
-
 app = Flask(__name__)
 
 
@@ -17,6 +16,11 @@ def square(n):
 @app.route('/greet/<name>')
 def greet(name):
     return jsonify({'message': f'Hello, {name}!'})
+
+
+@app.route('/sum/<int:a>/<int:b>')
+def sum_numbers(a, b):
+    return jsonify({'a': a, 'b': b, 'result': a + b})
 
 
 if __name__ == '__main__':
