@@ -19,5 +19,10 @@ def greet(name):
     return jsonify({'message': f'Hello, {name}!'})
 
 
+@app.route('/sum/<int:a>/<int:b>')
+def sum_numbers(a, b):
+    return jsonify({'a': a, 'b': b, 'result': a + b})
+
+
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000)

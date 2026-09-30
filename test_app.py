@@ -19,3 +19,7 @@ def test_square(client):
 def test_greet(client):
     r = client.get('/greet/SGU')
     assert 'Hello, SGU!' in r.get_json()['message']
+
+def test_sum(client):
+    r = client.get('/sum/10/5')
+    assert r.get_json()['result'] == 15
